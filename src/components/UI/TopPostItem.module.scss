@@ -1,0 +1,22 @@
+.top-post {
+  &-item {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+  }
+  &-num {
+    align-self: flex-start;
+    font-size: 3.6rem;
+    font-weight: 700;
+  }
+
+  &-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  &-info {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: rgba(33, 37, 41, 0.5);
+  }
+}

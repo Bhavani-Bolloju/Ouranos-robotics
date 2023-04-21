@@ -7,21 +7,8 @@ function Blogs() {
     'blog6',
     'blog7',
     'blog8',
-    'blog9',
-    'blog11',
-    'blog12',
-    'blog13',
-    'blog14',
-    'blog15',
-    'blog16',
-    'blog17',
-    'blog18',
-    'blog19',
-    'blog20',
-    'blog21',
-    'blog22',
-    'blog23',
-    'blog24',
+  
+   
   ])
 
   const pageNumberLimit = 5;
@@ -31,7 +18,6 @@ function Blogs() {
   const [maxPageLimit, setMaxPageLimit] = useState(5);
   const [minPageLimit, setMinPageLimit] = useState(0);
 
-  // useEffect()
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   }
@@ -53,7 +39,6 @@ function Blogs() {
     setCurrentPage(prev => prev + 1);
   }
 
-  console.log((currentPage-1)*6 , currentPage*6)
 
   const paginationAttribute = {
     currentPage, maxPageLimit, minPageLimit, response: passangerData,ItemsPerPage
@@ -71,6 +56,6 @@ function Blogs() {
       </div>
     </>
   );
-}
+}   
 
 export default Blogs;
