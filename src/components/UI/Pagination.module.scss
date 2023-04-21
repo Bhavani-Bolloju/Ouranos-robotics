@@ -1,0 +1,26 @@
+.page-numbers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+  color: #eee;
+
+  li {
+    color: inherit;
+  }
+
+  button {
+    padding: 0.5rem 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.active {
+  padding: 0.2rem 1rem;
+  background-color: #fff;
+  color: black;
+}
