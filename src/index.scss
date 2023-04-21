@@ -18,3 +18,73 @@ body {
   font-size: 1.6rem;
   color: #212529;
 }
+
+// .header {
+//   background-color: #d09e887c;
+//   height: 8rem;
+//   position: fixed;
+//   width: 100%;
+// }
+// .section-hero {
+//   background-color: #fadad8;
+//   // height: 62rem;
+//   height: 80vh;
+//   padding-top: 8rem;
+// }
+
+.main {
+  background-color: #a3daff;
+  padding: 2rem;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  // grid-template-columns: ;
+}
+.sidebar {
+  background-color: #ff7761;
+  flex-basis: 33%;
+  padding: 1rem;
+  align-self: flex-start;
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+
+  &-container {
+    // background: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .search {
+      color: #000;
+      background-color: #eee;
+      height: 5rem;
+    }
+    .catergory {
+      height: 20rem;
+      background: #000;
+    }
+    .top-posts {
+      background: #fff;
+      color: #000;
+      height: 30rem;
+    }
+  }
+}
+.blogs {
+  background-color: #86aef4;
+  flex-grow: 1;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1rem;
+
+  div {
+    background-color: #fff;
+    padding: 2rem;
+    height: 30rem;
+  }
+}
