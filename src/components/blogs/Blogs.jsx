@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '../UI/Pagination';
+import classes from './Blogs.module.scss';
+import organic_farming from '../../assets/organic-farming.jpg';
+import BlogPost from './BlogPost';
+import { postsData } from '../data/data';
 
 function Blogs() {
-  const [passangerData, setPassengerData] = useState(["blog1", "blog2", "blog3", "blog4",
-    'blog5',
-    'blog6',
-    'blog7',
-    'blog8',
-
-   
-  ])
+  const [blogPosts, setBlogPosts] = useState(postsData)
 
   const pageNumberLimit = 5;
   const ItemsPerPage = 6;
@@ -41,19 +38,36 @@ function Blogs() {
 
 
   const paginationAttribute = {
-    currentPage, maxPageLimit, minPageLimit, response: passangerData,ItemsPerPage
+    currentPage, maxPageLimit, minPageLimit, response: blogPosts,ItemsPerPage
   }
 
   return (
     <>
-    <div className='blogs'>
-        {passangerData.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((item,i) =>
-          <div key={i}>{item}</div>)
-        }
+    <div className={classes['blogs']}>
+
+        {blogPosts.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((post, i) => {
+          // console.log(post.image)
+          return (
+            <BlogPost
+              key={i}
+              title={post.title }
+              category={post.category }
+              date={post.date }
+              image={post.image}
+              content={post.content}
+            />)
+        })}
+    
+        {/* <BlogPost
+          title='Organic Farming: How It Can Help Save the Planet' content="Learn about the benefits of organic farming and how it can help reduce the environmental impact of agriculture."
+          category="Sustainable Farming"
+          date='april, 2023'
+          image={organic_farming}
+        /> */}
+       
     </div>
-      {/* <div className='pagination'> */}
+        
         <Pagination {...paginationAttribute} onPrevClick={onPrevClick} onNextClick={onNextClick} onPageChange={onPageChange} />
-      {/* </div> */}
     </>
   );
 }   

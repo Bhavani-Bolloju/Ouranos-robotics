@@ -1,6 +1,5 @@
 .pagination {
-  flex-grow: 1;
-  flex-basis: 100%;
+  grid-column: 1/-1;
   text-align: center;
   padding: 2rem 0;
   color: #00c170;

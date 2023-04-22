@@ -1,9 +1,6 @@
 .sidebar {
-  // background-color: #ff7761;
-  flex-basis: 33%;
-  align-self: flex-start;
-
-  @media screen and (max-width: 700px) {
+  grid-column: 1/2;
+  @media screen and (max-width: 750px) {
     display: none;
   }
 
