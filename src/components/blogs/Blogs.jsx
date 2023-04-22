@@ -7,7 +7,7 @@ function Blogs() {
     'blog6',
     'blog7',
     'blog8',
-  
+
    
   ])
 
@@ -51,9 +51,9 @@ function Blogs() {
           <div key={i}>{item}</div>)
         }
     </div>
-      <div className='pagination'>
+      {/* <div className='pagination'> */}
         <Pagination {...paginationAttribute} onPrevClick={onPrevClick} onNextClick={onNextClick} onPageChange={onPageChange} />
-      </div>
+      {/* </div> */}
     </>
   );
 }   

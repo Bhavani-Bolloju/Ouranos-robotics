@@ -1,5 +1,8 @@
 import React from 'react';
-import classes from './Pagination.module.scss'
+import classes from './Pagination.module.scss';
+import {AiOutlineRight,AiOutlineLeft} from 'react-icons/ai'
+import {HiOutlineChevronLeft,HiOutlineChevronRight} from 'react-icons/hi'
+
 
 function Pagination(props) {
 
@@ -52,18 +55,23 @@ function Pagination(props) {
   }
 
   return (
-    <div>
-      <ul className={classes['page-numbers']}>
-        <li>
-          <button disabled={currentPage <=1 } onClick={handlePrevClick }>prev</button>
-        </li>
+    <div className={classes.pagination}>
+      <div className={classes['page-numbers']}>
+        
+          <button disabled={currentPage <= 1} onClick={handlePrevClick} className={classes['nav-btns']}>
+            <HiOutlineChevronLeft/>
+          </button>
+       
+      <ul >
         {pageDecrementEllipses}
         {pageNumbers}
         { pageIncrementEllipses}
-        <li>
-          <button disabled={currentPage >= pages_total  } onClick={handleNextClick}>Next</button>
-        </li>
-      </ul>
+      </ul> 
+          <button disabled={currentPage >= pages_total} onClick={handleNextClick} className={classes['nav-btns']}>
+            <HiOutlineChevronRight/>
+          </button>
+      
+     </div>
     </div>
   );
 }
