@@ -5,7 +5,7 @@ import organic_farming from '../../assets/organic-farming.jpg';
 import BlogPost from './BlogPost';
 import { postsData } from '../data/data';
 
-function Blogs() {
+function Blogs({ inputValue}) {
   const [blogPosts, setBlogPosts] = useState(postsData)
 
   const pageNumberLimit = 5;
@@ -41,12 +41,13 @@ function Blogs() {
     currentPage, maxPageLimit, minPageLimit, response: blogPosts,ItemsPerPage
   }
 
+  const filterBlogList = blogPosts.filter(post => post.category.toLowerCase().includes(inputValue.toLowerCase()));
+
   return (
     <>
     <div className={classes['blogs']}>
 
-        {blogPosts.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((post, i) => {
-          // console.log(post.image)
+        {filterBlogList.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((post, i) => {
           return (
             <BlogPost
               key={i}
@@ -57,16 +58,8 @@ function Blogs() {
               content={post.content}
             />)
         })}
-    
-        {/* <BlogPost
-          title='Organic Farming: How It Can Help Save the Planet' content="Learn about the benefits of organic farming and how it can help reduce the environmental impact of agriculture."
-          category="Sustainable Farming"
-          date='april, 2023'
-          image={organic_farming}
-        /> */}
        
     </div>
-        
         <Pagination {...paginationAttribute} onPrevClick={onPrevClick} onNextClick={onNextClick} onPageChange={onPageChange} />
     </>
   );

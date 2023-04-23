@@ -1,14 +1,14 @@
 .blogs {
-  background-color: #86aef4;
+  // background-color: #86aef4;
   grid-column: 2/-1;
   display: grid;
   // padding: 0 1rem;
   grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(45rem, 1fr));
   gap: 1rem;
+  align-content: stretch;
+  justify-content: stretch;
   color: #212529;
-
-  //remove this later
-  // min-height: calc(40rem / 2 * 6);
 
   @media screen and (max-width: 750px) {
     grid-column: 1/-1;
