@@ -14,7 +14,7 @@ export const postsData = [
     image: organic_farming,
     date: "April 2023",
     category: "Sustainable Farming",
-    id: "p1"
+    id: "0"
   },
   {
     title:
@@ -24,7 +24,7 @@ export const postsData = [
     image: image2,
     date: "April 2023",
     category: " IoT",
-    id: "p2"
+    id: "1"
   },
   {
     title: "5 Ways to Optimize Your Crop Yields with Automation",
@@ -33,7 +33,7 @@ export const postsData = [
     image: image4,
     date: "march 2023",
     category: "Automation",
-    id: "p3"
+    id: "2"
   },
   {
     category: "Sustainable Farming",
@@ -43,7 +43,7 @@ export const postsData = [
       "The Business Case for Sustainable Farming: Why it Makes Financial Sense",
     content:
       "Explore the economic benefits of sustainable farming practices, from reduced input costs.",
-    id: "p4"
+    id: "3"
   },
   {
     category: "Expert Insights",
@@ -52,7 +52,7 @@ export const postsData = [
     title: "Expert Insights: The coming future of Agri-Tech",
     content:
       "Hear from top experts in the field about the latest trends and technologies shaping the future of Agri-tech.",
-    id: "p5"
+    id: "4"
   },
   {
     category: "Precision Agriculture",
@@ -61,7 +61,7 @@ export const postsData = [
     title: "Maximizing Crop Yields with Precision Planting",
     content:
       "Discover how precision planting can help farmers maximize their crop yields while reducing waste and costs.",
-    id: "p6"
+    id: "5"
   },
   {
     category: "Precision Agriculture",
@@ -70,6 +70,6 @@ export const postsData = [
     title: "Maximizing Crop Yields with Precision Planting",
     content:
       "Discover how precision planting can help farmers maximize their crop yields while reducing waste and costs.",
-    id: "p7"
+    id: "6"
   }
 ];

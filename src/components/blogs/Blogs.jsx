@@ -14,7 +14,6 @@ function Blogs({ inputValue}) {
     const res = await req.json();
   
     setBlogPosts(res)
-    
   }
 
   useEffect(() => {
@@ -69,7 +68,7 @@ function Blogs({ inputValue}) {
               date={post.date }
               image={post.image}
               content={post.content}
-              id={post.id}
+              id={i}
             />)
         })}
        

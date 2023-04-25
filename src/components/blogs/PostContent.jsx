@@ -2,19 +2,19 @@ import React from 'react';
 import classes from './PostContent.module.scss'
 
 function PostContent({ post }) {
-  // console.log(post)
+        const { category, content, image, date, id, title } = post;
+      
   return (
     <div className={classes.post}>
-    <img className={classes['post-image']} src={post[0]?.image} alt={post[0]?.title } />
-    <p className={classes['post-title']}>{post[0]?.title}</p>
+    <img className={classes['post-image']} src={image} alt={title } />
+    <p className={classes['post-title']}>{title}</p>
       <p className={classes['post-catergory']}>
-        <span>{ post[0]?.category}</span> - 
-        <span>{ post[0]?.date}</span>
+        <span>{ category}</span> - 
+        <span> { date}</span>
       </p>
     
       <div className={classes['post-content']}>
         <div>
-
     Organic farming is a method of agriculture that avoids the use of synthetic fertilizers, pesticides, and other harmful chemicals. Instead, it relies on natural methods of pest control and soil management, such as crop rotation, cover crops, and composting. Organic farming has gained popularity in recent years due to concerns about the impact of conventional agriculture on the environment, human health, and animal welfare. In this blog post, we'll explore how organic farming can help save the planet and why it's important to support this sustainable method of agriculture.
         </div>
 

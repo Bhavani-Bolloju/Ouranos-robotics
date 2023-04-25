@@ -27,13 +27,13 @@ const userComments = [
   },
 ]
 
-function Comments() {
+function Comments({comments }) {
   const [onInputFocus, setOnInputFocus] = useState(false);
 
+  // console.log(comments, 'comments')
   const closeHandler = function () {
     setOnInputFocus(false);
   }
-
 
   return (
     <div className={classes['comments']}>
@@ -50,10 +50,10 @@ function Comments() {
       <div className={classes['user-comments']}>
 
       <ul >
-        {userComments.map((item,i) => {
+        {comments?.map((item,i) => {
           return <li key={i}>
             <div className={classes['user-name']}>{ item.name}</div>
-            <div className={classes['user-comment']}>{item.commentText }</div>
+            <div className={classes['user-comment']}>{item.comment }</div>
           </li>
         })}
       </ul>

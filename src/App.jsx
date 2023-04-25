@@ -7,10 +7,17 @@ import { postsData } from './components/data/data';
 
 function App() {
 
+  const updateData = postsData.map(post => ({
+    ...post, comments: [{
+      name: 'neha',
+      comment:'first comment'
+  }] }));
+  // console.log(updateData)
+
   const sendBlogData =async function () {
     const send =await fetch('https://ouranos-f5357-default-rtdb.firebaseio.com/posts.json', {
-      method: 'PUT',
-      body: JSON.stringify(postsData),
+      method: 'put',
+      body: JSON.stringify(updateData),
       header: {
         'content-type': 'application/json',
       }
