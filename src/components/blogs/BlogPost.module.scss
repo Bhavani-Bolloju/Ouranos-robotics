@@ -32,10 +32,16 @@
     margin-bottom: 1rem;
     color: rgba(33, 37, 41, 0.7);
   }
-  a {
+  button {
     text-decoration: none;
     color: #00c170;
     font-size: 1.6rem;
     text-transform: capitalize;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

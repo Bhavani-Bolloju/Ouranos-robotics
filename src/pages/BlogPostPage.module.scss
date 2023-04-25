@@ -1,0 +1,54 @@
+.blogPostPage {
+  width: 80%;
+  min-width: 800px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  .header {
+    background-color: white;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #212529;
+    border-radius: 0.8rem;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.02);
+    // position: fi;
+
+    .btn-back {
+      width: 3rem;
+      height: 2rem;
+    }
+    .btn-copy {
+      display: flex;
+      align-items: center;
+      border: 1px solid #cbcbcb;
+      background-color: transparent;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      text-transform: capitalize;
+      gap: 0.5rem;
+      font-size: 1.4rem;
+      margin-right: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      color: rgba(33, 37, 41, 0.7);
+      width: 2.2rem;
+      height: 2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+}

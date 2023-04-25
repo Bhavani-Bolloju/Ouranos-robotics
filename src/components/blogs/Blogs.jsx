@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Pagination from '../UI/Pagination';
 import classes from './Blogs.module.scss';
-import organic_farming from '../../assets/organic-farming.jpg';
+
 import BlogPost from './BlogPost';
 import { postsData } from '../data/data';
 
+
 function Blogs({ inputValue}) {
-  const [blogPosts, setBlogPosts] = useState(postsData)
+  const [blogPosts, setBlogPosts] = useState(postsData);
+
+
 
   const pageNumberLimit = 5;
   const ItemsPerPage = 6;
@@ -41,21 +44,21 @@ function Blogs({ inputValue}) {
     currentPage, maxPageLimit, minPageLimit, response: blogPosts,ItemsPerPage
   }
 
-  const filterBlogList = blogPosts.filter(post => post.category.toLowerCase().includes(inputValue.toLowerCase()));
+  const filterBlogList = blogPosts.filter(post => post.category.toLowerCase().includes(inputValue.toLowerCase()) || post.content.toLowerCase().includes(inputValue.toLowerCase()) );
 
   return (
     <>
     <div className={classes['blogs']}>
-
         {filterBlogList.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((post, i) => {
           return (
             <BlogPost
-              key={i}
+              key={post.id}
               title={post.title }
               category={post.category }
               date={post.date }
               image={post.image}
               content={post.content}
+              id={post.id}
             />)
         })}
        
