@@ -8,7 +8,7 @@ import Blogs from '../components/blogs/Blogs';
 function HomePage() {
 
   const [inputText, setInputText] = useState('');
-  const [searchCategory, setSearchCatergory] = useState('');
+  // const [searchCategory, setSearchCatergory] = useState('');
 
 
 

@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Pagination from '../UI/Pagination';
 import classes from './Blogs.module.scss';
 
 import BlogPost from './BlogPost';
-import { postsData } from '../data/data';
+// import { postsData } from '../data/data';
 
 
 function Blogs({ inputValue}) {
-  const [blogPosts, setBlogPosts] = useState(postsData);
+  const [blogPosts, setBlogPosts] = useState([]);
 
+  const fetchData = async function () {
+    const req = await fetch('https://ouranos-f5357-default-rtdb.firebaseio.com/posts.json');
+    const res = await req.json();
+  
+    setBlogPosts(res)
+    
+  }
+
+  useEffect(() => {
+    fetchData()
+  },[])
 
 
   const pageNumberLimit = 5;

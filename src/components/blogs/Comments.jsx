@@ -25,16 +25,10 @@ const userComments = [
     name: 'Priya',
     commentText:"Important topic, thanks for raising awareness!"
   },
-  
-
 ]
 
-
 function Comments() {
-
   const [onInputFocus, setOnInputFocus] = useState(false);
-
-  console.log(onInputFocus);
 
   const closeHandler = function () {
     setOnInputFocus(false);
