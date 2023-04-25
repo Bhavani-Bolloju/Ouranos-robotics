@@ -1,5 +1,7 @@
 .comments {
   padding: 2rem;
+  position: relative;
+
   h3 {
     margin-top: 1rem;
   }
@@ -16,5 +18,73 @@
       color: rgba(33, 37, 41, 0.575);
       text-transform: capitalize;
     }
+  }
+
+  &-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 0.5rem;
+    gap: 1rem;
+    position: absolute;
+    z-index: 20;
+    top: 0%;
+    left: 0;
+    border: 1px solid #00c170;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: auto;
+
+    button {
+      // border: 1px solid #00c170;
+      border: none;
+      background-color: transparent;
+      padding: 0.8rem 4rem;
+      border-radius: 0.5rem;
+      background-color: #00c170;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .input-name {
+    flex-basis: 30%;
+  }
+  .input-email {
+    flex-basis: 65%;
+    flex-grow: 1;
+  }
+  .input-comment {
+    width: 100%;
+    border: 1px solid #00c170;
+    outline: none;
+    resize: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-family: inherit;
+    color: inherit;
+  }
+
+  .user-comments {
+    height: inherit;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      overflow: auto;
+    }
+    margin-top: 2rem;
+  }
+  .user-name {
+    text-transform: capitalize;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .user-comment {
+    color: rgba(33, 37, 41, 0.575);
   }
 }
