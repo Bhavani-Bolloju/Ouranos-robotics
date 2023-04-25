@@ -13,20 +13,20 @@ function DetailPost() {
 
   //fetch data and pass to the children
 
-  const fetchPost = async function () {
-    const req = await fetch(`https://ouranos-f5357-default-rtdb.firebaseio.com/posts/${id}.json`)
+  const fetchPost = async function (postId) {
+    const req = await fetch(`https://ouranos-f5357-default-rtdb.firebaseio.com/posts/${postId}.json`)
     const res = await req.json();
-  
     setPost(res)
   }
 
   useEffect(() => {
-    fetchPost()
-  }, [])
+    if (id) {
+      fetchPost(id)
+    }
+  }, [id])
   
-  // console.log(post)
+  // console.log(post?.comments, 'post page')
 
-  // const post = postsData.filter(post => post.id === id);
   return (
     <>
    {post && <section className={classes.post}>
@@ -37,7 +37,7 @@ function DetailPost() {
         <Sidebar/>
       </div>
       <div className={classes["post-comments"]}>
-          <Comments comments={post.comments } />
+          <Comments comments={post?.comments } id={id} />
       </div>
     </section>}
     </>

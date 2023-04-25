@@ -1,22 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classes from './Comments.module.scss';
 import { useState } from 'react';
 import BackDrop from '../UI/BackDrop';
 
 
 const userComments = [
-  {
-    name: 'harsh',
-    commentText:'very informative'
-  },
-  {
-    name: 'anandh',
-    commentText:"It's so important to support local farmers and food systems, and organic farming is a key part of that"
-  },
-  {
-    name: 'Mayra',
-    commentText:"I appreciate the discussion on the challenges of organic farming. It's not a perfect solution, but it's a step in the right direction"
-  },
+  // {
+  //   name: 'harsh',
+  //   commentText:'very informative'
+  // },
+  // {
+  //   name: 'anandh',
+  //   commentText:"It's so important to support local farmers and food systems, and organic farming is a key part of that"
+  // },
+  // {
+  //   name: 'Mayra',
+  //   commentText:"I appreciate the discussion on the challenges of organic farming. It's not a perfect solution, but it's a step in the right direction"
+  // },
   {
     name: 'Aryan',
     commentText:"This article does a great job of highlighting the benefits of organic farming without demonizing conventional agriculture."
@@ -27,12 +27,43 @@ const userComments = [
   },
 ]
 
-function Comments({comments }) {
+function Comments({comments, id }) {
   const [onInputFocus, setOnInputFocus] = useState(false);
+  const [nameInput, setNameInput] = useState('');
+  const [emailInput, setEmailInput] = useState('');
+  const [commentInput, setCommentInput] = useState('');
+
 
   // console.log(comments, 'comments')
   const closeHandler = function () {
     setOnInputFocus(false);
+  }
+  
+  const addCommentHandler =async function (e) {
+    e.preventDefault();
+
+    if (nameInput.length == 0 || emailInput.length == 0 || commentInput.length ==0) {
+      return
+    }
+    console.log(nameInput, emailInput, commentInput);
+    const sendComment = await fetch(`https://ouranos-f5357-default-rtdb.firebaseio.com/posts/${id}/comments.json`, {
+      method: "PUT",
+      body: JSON.stringify([...comments, {
+        name: nameInput,
+        email: emailInput,
+        comment: commentInput
+      }]),
+      headers: {
+        'content-type': "application/json"
+      }
+    });
+    const res = await sendComment.json();
+    console.log(res);
+
+    closeHandler();
+    setNameInput('');
+    setEmailInput("");
+    setCommentInput("");
   }
 
   return (
@@ -40,10 +71,33 @@ function Comments({comments }) {
       <h3>comments</h3>
       <input type="text" placeholder='write comment' onFocus={() => setOnInputFocus(true)}  />
       
-     {onInputFocus && <form action="" className={classes['comments-form']}>
-        <input type="text" className={classes['input-name'] } placeholder='name'/>
-        <input type="email" className={classes['input-email'] } placeholder='email'/>
-        <textarea placeholder='your comment' name="comment" id="comment" rows="2" className={classes['input-comment']}></textarea>
+      {onInputFocus &&
+        <form onSubmit={addCommentHandler} className={classes['comments-form']}>
+          <input
+            value={nameInput}
+            type="text"
+            className={classes['input-name']}
+            placeholder='name'
+            onChange={(e) => setNameInput(e.target.value)}
+            />
+          <input
+            value={emailInput}
+            type="email"
+            className={classes['input-email']}
+            placeholder='email'
+            
+            onChange={(e) => setEmailInput(e.target.value)}
+            />
+          <textarea
+            value={commentInput}
+            placeholder='your comment'
+            name="comment"
+            id="comment"
+            rows="2"
+            className={classes['input-comment']}
+            onChange={(e) => setCommentInput(e.target.value)}
+          />
+         
         <button>Add</button>
       </form>
       }
