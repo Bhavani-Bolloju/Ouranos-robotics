@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { postsData } from '../data/data';
+
 import classes from './DetailPost.module.scss';
 import PostContent from './PostContent';
 import Comments from './Comments';
