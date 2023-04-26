@@ -2,12 +2,14 @@ import React from 'react';
 import classes from './BlogPost.module.scss';
 import { useNavigate } from 'react-router-dom';
 
+
 function BlogPost({ category, image, date, title, content,id }) {
-  
+  console.log(image)
   const navigate = useNavigate();
 
   return (
     <article className={classes['blog-post']}>
+      {/* <Img src={ image} /> */}
       <img className={classes['blog-post-image']} src={image} alt={category } />
     <div className={classes['blog-post-content']}>
       <div className={classes['blog-post-info']}>

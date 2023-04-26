@@ -5,7 +5,8 @@ import classes from './Blogs.module.scss';
 import BlogPost from './BlogPost';
 import { InputSearch } from '../UI/UIComponents';
 
-function Blogs({ inputValue,onInput}) {
+function
+  Blogs({ inputValue, onInput }) {
   const [blogPosts, setBlogPosts] = useState([]);
 
   const fetchData = async function () {
