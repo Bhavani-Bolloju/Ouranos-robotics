@@ -1,9 +1,10 @@
 .header {
-  background-color: #eeeeee2b;
+  background-color: #eeeeee48;
   position: fixed;
   width: 100%;
   height: 7.5rem;
   color: #fff;
+  z-index: 100;
 
   @media screen and (max-width: 600px) {
     background-color: #00c170;
@@ -60,7 +61,7 @@
     position: fixed;
     right: 0;
     padding-right: 2rem;
-    width: 30%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;

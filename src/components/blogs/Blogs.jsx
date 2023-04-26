@@ -3,10 +3,11 @@ import Pagination from '../UI/Pagination';
 import classes from './Blogs.module.scss';
 
 import BlogPost from './BlogPost';
+import { InputSearch } from '../UI/UIComponents';
 // import { postsData } from '../data/data';
 
 
-function Blogs({ inputValue}) {
+function Blogs({ inputValue,onInput}) {
   const [blogPosts, setBlogPosts] = useState([]);
 
   const fetchData = async function () {
@@ -58,7 +59,11 @@ function Blogs({ inputValue}) {
 
   return (
     <>
-    <div className={classes['blogs']}>
+      <div className={classes['blog-search']}>
+
+        <InputSearch onSearch={onInput} value={inputValue } />
+      </div>
+      <div className={classes['blogs']}>
         {filterBlogList.slice((currentPage-1)*ItemsPerPage , currentPage*ItemsPerPage).map((post, i) => {
           return (
             <BlogPost

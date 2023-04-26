@@ -1,16 +1,14 @@
 import React from 'react';
 import classes from './Sidebar.module.scss';
-import { TfiSearch } from 'react-icons/tfi';
+
 import TopPostItem from '../UI/TopPostItem';
+import { InputSearch } from '../UI/UIComponents';
 
 function Sidebar({ onInput, value}) {
   return (
     <div className={classes['sidebar']}>
       <div className={classes['sidebar-container']}>
-        <form className={classes['search']}>
-          <input onChange={(e)=> onInput(e.target.value)} type="text" placeholder='Search' value={value} />
-          <button> <TfiSearch /></button>
-        </form>
+        <InputSearch onSearch={onInput} value={ value} />
         <div className={classes['category']}>
           <h3 className={classes['category-heading']}>categories</h3>
           <ul className={classes['category-list']}>

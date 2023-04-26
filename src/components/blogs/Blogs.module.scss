@@ -1,3 +1,12 @@
+.blog-search {
+  display: none;
+  grid-column: 1/-1;
+  @media screen and (max-width: 600px) {
+    display: block;
+    margin-top: 10rem;
+  }
+}
+
 .blogs {
   // background-color: #86aef4;
   grid-column: 2/-1;
@@ -12,5 +21,9 @@
 
   @media screen and (max-width: 750px) {
     grid-column: 1/-1;
+  }
+
+  @media screen and (max-width: 600px) {
+    // margin-top: 10rem;
   }
 }

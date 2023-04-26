@@ -28,3 +28,34 @@
     }
   }
 }
+
+.search {
+  background-color: #eee;
+  height: 4.5rem;
+  position: relative;
+  border-radius: 1rem;
+  z-index: 20;
+  input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 2rem;
+    font-size: 1.6rem;
+    border-radius: 1rem;
+    color: inherit;
+
+    &::placeholder {
+      font-size: 1.6rem;
+      color: #a4adb6;
+    }
+  }
+  svg {
+    font-size: 2rem;
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a4adb6;
+  }
+}

@@ -11,8 +11,6 @@ function Header() {
     setIsOpen(prev => !prev)
   }
 
-  console.log(isOpen)
-
   return (
     <header className={classes.header}>
       <div className={classes['header-container']}>

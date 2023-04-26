@@ -1,5 +1,6 @@
 import React from 'react';
-import classes from './UiComponents.module.scss'
+import classes from './UiComponents.module.scss';
+import { TfiSearch } from 'react-icons/tfi';
 
 export function NavList() {
   return (
@@ -28,3 +29,13 @@ export function Button() {
   return <button className={classes["nav-btn"]}>Buy now</button>
 } 
 
+
+
+export function InputSearch({onSearch, value }) {
+  return (
+    <form className={classes['search']}>
+      <input onChange={(e) => onSearch(e.target.value)} type="text" placeholder='Search' value={value} />
+      <button> <TfiSearch /></button>
+    </form>
+  );
+}
