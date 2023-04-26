@@ -5,6 +5,10 @@
   height: 7.5rem;
   color: #fff;
 
+  @media screen and (max-width: 600px) {
+    background-color: #00c170;
+  }
+
   &-container {
     display: flex;
     align-items: center;
@@ -20,32 +24,73 @@
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.1;
+
+    .btn-buy {
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
   }
 
   .nav {
-    &-list {
-      display: flex;
-      list-style: none;
-      gap: 4.5rem;
-      text-transform: capitalize;
+    ul {
+      @media screen and (max-width: 800px) {
+        gap: 2rem;
+      }
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+    }
+  }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        font-weight: 600;
-        font-size: 1.8rem;
+  svg {
+    color: #fff;
+    font-size: 3.5rem;
+    @media screen and (min-width: 600px) {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .nav-active {
+    background-color: #ffffffad;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    right: 0;
+    padding-right: 2rem;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    transform: translateX(100%);
+    transition: all 0.2s;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 3rem;
+    }
+    a {
+      color: #00c170;
+      font-size: 2rem;
+    }
+
+    .btn {
+      button {
+        display: block;
       }
     }
 
-    &-btn {
-      background-color: #00c170;
-      border: none;
-      outline: none;
-      color: inherit;
-      padding: 1rem 3.5rem;
-      border-radius: 5rem;
-      font-weight: 600;
-      font-size: 1.4rem;
+    &.active {
+      transform: translateX(0);
+    }
+
+    @media screen and (min-width: 600px) {
+      display: none;
     }
   }
 }

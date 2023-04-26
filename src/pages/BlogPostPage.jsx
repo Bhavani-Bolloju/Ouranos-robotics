@@ -8,8 +8,7 @@ function BlogPostPage() {
   const navigate = useNavigate();
   return (
     <div className={classes.blogPostPage}>
-      <header className={classes['header-container']}>
-        <div className={classes['header']}>
+      <header className={classes.header}>
         <BsArrowLeft onClick={()=> navigate('/')} className={classes['btn-back'] } />
         <div>
           <button className={classes['btn-copy']}>
@@ -20,7 +19,6 @@ function BlogPostPage() {
           <BsFacebook/>
           <BsLinkedin/>
           <BsWhatsapp/>
-        </div>
         </div>
       </header>
        <Outlet/>

@@ -32,6 +32,7 @@ function Comments({comments, id }) {
   const [nameInput, setNameInput] = useState('');
   const [emailInput, setEmailInput] = useState('');
   const [commentInput, setCommentInput] = useState('');
+  const [userComments, setUserComments] = useState(comments)
 
 
   // console.log(comments, 'comments')
@@ -45,20 +46,24 @@ function Comments({comments, id }) {
     if (nameInput.length == 0 || emailInput.length == 0 || commentInput.length ==0) {
       return
     }
-    console.log(nameInput, emailInput, commentInput);
+
+    const newComment = {
+      name: nameInput,
+      email: emailInput,
+      comment: commentInput
+    }
+
     const sendComment = await fetch(`https://ouranos-f5357-default-rtdb.firebaseio.com/posts/${id}/comments.json`, {
       method: "PUT",
-      body: JSON.stringify([...comments, {
-        name: nameInput,
-        email: emailInput,
-        comment: commentInput
-      }]),
+      body: JSON.stringify([...comments,newComment ]),
       headers: {
         'content-type': "application/json"
       }
     });
     const res = await sendComment.json();
-    console.log(res);
+   
+
+    setUserComments(prev => [...prev, newComment])
 
     closeHandler();
     setNameInput('');
@@ -104,7 +109,7 @@ function Comments({comments, id }) {
       <div className={classes['user-comments']}>
 
       <ul >
-        {comments?.map((item,i) => {
+        {userComments?.map((item,i) => {
           return <li key={i}>
             <div className={classes['user-name']}>{ item.name}</div>
             <div className={classes['user-comment']}>{item.comment }</div>
