@@ -4,8 +4,6 @@ import classes from './Blogs.module.scss';
 
 import BlogPost from './BlogPost';
 import { InputSearch } from '../UI/UIComponents';
-// import { postsData } from '../data/data';
-
 
 function Blogs({ inputValue,onInput}) {
   const [blogPosts, setBlogPosts] = useState([]);

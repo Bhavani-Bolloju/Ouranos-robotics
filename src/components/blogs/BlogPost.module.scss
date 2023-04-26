@@ -1,16 +1,16 @@
 .blog-post {
   border-radius: 1rem;
-  padding: 2.5rem;
+  // padding: 2.5rem;
   background-color: #fff;
-  // height: fit-content;
+
   align-self: stretch;
-  // justify-self: stretch;
-  // max-height: 40rem;
+  overflow: hidden;
+
   &-image {
     height: 25rem;
     width: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    // border-radius: 1rem;
   }
 
   &-info {
@@ -22,6 +22,8 @@
   }
   &-content {
     font-size: 1.8rem;
+    padding: 2.5rem;
+    padding-top: 0;
   }
   &-title {
     margin-bottom: 1rem;

@@ -12,7 +12,7 @@ function App() {
       name: 'neha',
       comment:'first comment'
   }] }));
-  // console.log(updateData)
+
 
   const sendBlogData =async function () {
     const send =await fetch('https://ouranos-f5357-default-rtdb.firebaseio.com/posts.json', {
